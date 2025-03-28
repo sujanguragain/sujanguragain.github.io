@@ -79,7 +79,6 @@
         <h1>Sujan Guragain</h1>
         <p>System Administrator | DevOps Engineer | Cybersecurity Enthusiast</p>
     </header>
-
     <div class="container">
         <section class="profile-section">
             <img src="https://via.placeholder.com/200" alt="Sujan Guragain" class="profile-pic">
@@ -88,7 +87,6 @@
                 <p>Passionate tech professional with expertise in system administration, DevOps practices, and cybersecurity. Committed to implementing robust, scalable, and secure infrastructure solutions that drive organizational efficiency.</p>
             </div>
         </section>
-
         <section class="skills">
             <h2>Technical Skills</h2>
             <div class="tech-icons">
@@ -99,7 +97,6 @@
                 <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/terraform.svg" alt="Terraform">
             </div>
         </section>
-
         <section class="experience">
             <h2>Professional Expertise</h2>
             <h3>Core Competencies</h3>
@@ -113,7 +110,6 @@
             </ul>
         </section>
     </div>
-
     <section class="contact">
         <h2>Get in Touch</h2>
         <p>Email: contact@sujanguragain.com.np</p>
