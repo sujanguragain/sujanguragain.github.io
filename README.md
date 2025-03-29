@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,21 +13,18 @@
             --light: #f8fafc;
             --dark: #0f172a;
             --text: #334155;
-        }
-        
+        }       
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
         body {
             background-color: #f1f5f9;
             color: var(--text);
             line-height: 1.6;
         }
-        
         header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
@@ -36,7 +34,6 @@
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        
         header::before {
             content: "";
             position: absolute;
@@ -48,25 +45,21 @@
             opacity: 0.1;
             z-index: 0;
         }
-        
         .header-content {
             position: relative;
             z-index: 1;
         }
-        
         h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
         }
-        
         .title-bar {
             display: inline-block;
             font-size: 1.2rem;
             padding: 0.5rem 0;
             position: relative;
         }
-        
         .title-bar::after {
             content: '';
             display: block;
@@ -75,13 +68,11 @@
             background-color: var(--accent);
             margin: 0.8rem auto 0;
         }
-        
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
         }
-        
         .card {
             background-color: white;
             border-radius: 8px;
@@ -90,19 +81,16 @@
             margin-bottom: 2rem;
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        
         .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
         }
-        
         .profile-section {
             display: flex;
             align-items: center;
             gap: 2rem;
             margin-bottom: 1rem;
         }
-        
         .profile-img {
             width: 150px;
             height: 150px;
@@ -110,14 +98,12 @@
             object-fit: cover;
             border: 4px solid var(--accent);
         }
-        
         .section-title {
             color: var(--primary);
             margin-bottom: 1.5rem;
             position: relative;
             display: inline-block;
         }
-        
         .section-title::after {
             content: '';
             display: block;
@@ -126,33 +112,27 @@
             background-color: var(--accent);
             margin-top: 0.5rem;
         }
-        
         .skills-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 1.5rem;
             margin-top: 1.5rem;
         }
-        
         .skill-item {
             text-align: center;
             transition: transform 0.3s;
         }
-        
         .skill-item:hover {
             transform: scale(1.1);
         }
-        
         .skill-icon {
             width: 60px;
             height: 60px;
             margin-bottom: 0.5rem;
         }
-        
         .skill-name {
             font-weight: 500;
         }
-        
         .btn {
             display: inline-block;
             padding: 0.8rem 1.5rem;
@@ -164,13 +144,11 @@
             transition: all 0.3s;
             margin-top: 1rem;
         }
-        
         .btn:hover {
             background-color: var(--secondary);
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        
         footer {
             background-color: var(--dark);
             color: white;
@@ -178,34 +156,28 @@
             padding: 2rem;
             margin-top: 2rem;
         }
-        
         .social-links {
             display: flex;
             justify-content: center;
             gap: 1.5rem;
             margin-top: 1rem;
         }
-        
         .social-icon {
             width: 40px;
             height: 40px;
             transition: transform 0.3s;
         }
-        
         .social-icon:hover {
             transform: scale(1.2);
         }
-        
         @media (max-width: 768px) {
             h1 {
                 font-size: 2.5rem;
-            }
-            
+            }   
             .profile-section {
                 flex-direction: column;
                 text-align: center;
             }
-            
             .skills-container {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -219,7 +191,6 @@
             <div class="title-bar">System Administrator | DevOps Engineer | Cybersecurity Enthusiast</div>
         </div>
     </header>
-    
     <div class="container">
         <section class="card">
             <div class="profile-section">
@@ -235,7 +206,6 @@
                 </div>
             </div>
         </section>
-        
         <section class="card">
             <h2 class="section-title">Technical Skills</h2>
             <div class="skills-container">
@@ -265,7 +235,6 @@
                 </div>
             </div>
         </section>
-        
         <section class="card">
             <h2 class="section-title">Professional Expertise</h2>
             <div class="expertise-item">
@@ -281,7 +250,6 @@
                 <p>Implementing security best practices in infrastructure design, vulnerability assessment, and compliance. Experience with security tooling, monitoring, and incident response procedures.</p>
             </div>
         </section>
-        
         <section class="card" id="contact">
             <h2 class="section-title">Get In Touch</h2>
             <p>I'm always open to discussing new projects, opportunities, or partnerships.</p>
@@ -296,7 +264,6 @@
             </form>
         </section>
     </div>
-    
     <footer>
         <p>© 2025 Sujan Guragain. All Rights Reserved.</p>
         <div class="social-links">
