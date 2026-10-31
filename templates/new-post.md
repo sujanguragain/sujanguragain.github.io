@@ -1,22 +1,26 @@
 ---
-title: "Your next article title"
-slug: "your-next-article"
+title: "Your article title"
+slug: "your-article-title"
 date: "2026-10-31"
-category: "DevOps"
-excerpt: "A short, specific introduction for the article listing."
-tags: ["Linux", "Automation"]
-art: "delivery"
+category: "Monitoring"
+excerpt: "A short, specific description of what the reader will learn."
+tags: ["Linux", "Grafana"]
+art: "monitoring"
 draft: true
 ---
-## The context
 
-Describe the problem, project or lesson. Replace the date above with your publication date.
+## The problem
 
-## What I did
+Describe the service, task or question without sharing private systems, client information or credentials.
 
-- Describe your contribution accurately.
-- Keep internal addresses, credentials and client-confidential details out of the post.
+## The approach
 
-## What I learned
+Explain what you did, why you chose that approach and what someone else would need to reproduce it.
 
-Explain one useful takeaway.
+## What to check
+
+Describe how you verified the result and any limits that matter.
+
+## References
+
+- [Documentation title](https://example.com)

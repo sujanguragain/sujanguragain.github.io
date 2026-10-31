@@ -1,6 +1,6 @@
 {
   "name": "Sujan Guragain",
-  "role": "DevOps & Security Engineer",
+  "role": "DevOps & Systems Engineer",
   "location": "Kathmandu, Nepal",
   "email": "guragain.sujan11@gmail.com",
   "linkedin": "https://www.linkedin.com/in/sujanguragain/",
@@ -8,27 +8,102 @@
   "website": "https://sujanguragain.com.np",
   "repository": "sujanguragain/sujanguragain.github.io",
   "branch": "main",
-  "description": "DevOps, cloud infrastructure and cybersecurity. Selected work and practical engineering notes by Sujan Guragain, based in Kathmandu, Nepal.",
-  "intro": "I’m Sujan, a DevOps and security engineer based in Kathmandu. I help teams ship with confidence and keep critical infrastructure running.",
-  "about": "My work sits at the intersection of systems administration, delivery automation and network security. From keeping production Linux services healthy to modernizing firewalls and building private AI platforms, I care about systems that people can understand, operate and trust.",
+  "description": "Sujan Guragain — DevOps, systems administration and infrastructure security. Projects and technical notes on Linux, monitoring, automation and production services.",
+  "intro": "I manage Linux infrastructure, automate deployments and support the services teams use every day. My work covers monitoring, databases, network security and private AI systems.",
+  "about": "I’m a systems and DevOps engineer based in Kathmandu. I work with production applications and the infrastructure around them: servers, databases, deployment pipelines, monitoring and backups. I also work on network security projects and internal AI tooling.",
   "experience": [
-    {"role":"Systems Administrator & DevOps Engineer","company":"Chez Inspheris / Lively Software","period":"June 2022 — Present","description":"Production Linux services, Jenkins delivery pipelines, Proxmox infrastructure, monitoring, backup and recovery, and internal AI tooling."},
-    {"role":"Network & Security Engineer","company":"Etech International Pvt. Ltd.","period":"Current project engagement","description":"Check Point infrastructure modernization, high-availability validation, controlled upgrades and security operations for enterprise environments."},
-    {"role":"System Administrator","company":"Genese Solution Pvt. Ltd.","period":"July 2021 — June 2022","description":"AWS infrastructure, release automation, monitoring, hosting operations and technical support for customer workloads."},
-    {"role":"IT Support Engineer","company":"Etech International Pvt. Ltd.","period":"January 2018 — June 2021","description":"IT support and systems troubleshooting; the foundation of my path into infrastructure engineering."}
+    {
+      "role": "Systems Administrator & DevOps Engineer",
+      "company": "Chez Inspheris / Lively Software",
+      "period": "June 2022 — Present",
+      "description": "Manage production Linux services, Jenkins pipelines, virtual machines and backups. Support Tomcat, MySQL and Elasticsearch workloads, operational monitoring and internal AI infrastructure."
+    },
+    {
+      "role": "Network & Security Engineer",
+      "company": "Etech International Pvt. Ltd.",
+      "period": "Current project engagement",
+      "description": "Support enterprise firewall upgrades, high-availability testing, security maintenance and technical documentation."
+    },
+    {
+      "role": "System Administrator",
+      "company": "Genese Solution Pvt. Ltd.",
+      "period": "July 2021 — June 2022",
+      "description": "Supported AWS infrastructure, hosting, monitoring and release automation for customer applications."
+    },
+    {
+      "role": "IT Support Engineer",
+      "company": "Etech International Pvt. Ltd.",
+      "period": "January 2018 — June 2021",
+      "description": "Provided user support, maintained IT systems and resolved hardware, network and application issues."
+    }
   ],
-  "certifications":[
-    {"short":"CCSE","name":"Check Point Certified Security Expert","year":"2026"},
-    {"short":"CCSA","name":"Check Point Certified Security Administrator · R81","year":"2025"}
+  "certifications": [
+    {
+      "short": "CCSE",
+      "name": "Check Point Certified Security Expert",
+      "year": "2026"
+    },
+    {
+      "short": "CCSA",
+      "name": "Check Point Certified Security Administrator · R81",
+      "year": "2025"
+    }
   ],
-  "education":[
-    {"title":"MSc · Information Technology & Cybersecurity","school":"Islington College / London Metropolitan University","status":"In progress"},
-    {"title":"BSc · Computer Science & Information Technology","school":"Tribhuvan University","status":"Completed"}
+  "education": [
+    {
+      "title": "MSc · Information Technology & Cybersecurity",
+      "school": "Islington College / London Metropolitan University",
+      "status": "In progress"
+    },
+    {
+      "title": "BSc · Computer Science & Information Technology",
+      "school": "Tribhuvan University",
+      "status": "Completed"
+    }
   ],
-  "skills":[
-    {"title":"Cloud & systems","items":["AWS","Linux","Proxmox VE / PBS","Nginx","Apache HTTPD","MySQL"]},
-    {"title":"Delivery & automation","items":["Jenkins","Docker / Compose","Git / GitHub","Bash","CI/CD"]},
-    {"title":"Security & resilience","items":["Check Point","ClusterXL","pfSense","SSL / TLS","Backup & recovery"]},
-    {"title":"Visibility & AI","items":["Prometheus","Grafana","Nagios","Elasticsearch","OpenWebUI","Hermes"]}
+  "skills": [
+    {
+      "title": "Systems & cloud",
+      "items": [
+        "Linux",
+        "AWS",
+        "Proxmox VE / PBS",
+        "Nginx",
+        "Apache HTTPD",
+        "Tomcat"
+      ]
+    },
+    {
+      "title": "Automation & delivery",
+      "items": [
+        "Jenkins",
+        "Docker / Compose",
+        "Git / GitHub",
+        "Bash",
+        "n8n"
+      ]
+    },
+    {
+      "title": "Monitoring & data",
+      "items": [
+        "Grafana",
+        "Prometheus",
+        "Nagios",
+        "MySQL",
+        "Elasticsearch",
+        "Kibana"
+      ]
+    },
+    {
+      "title": "Security & AI",
+      "items": [
+        "Check Point",
+        "pfSense",
+        "OWASP ZAP",
+        "Nmap",
+        "Hermes",
+        "OpenWebUI"
+      ]
+    }
   ]
 }

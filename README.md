@@ -1,23 +1,57 @@
-# Sujan Guragain · Portfolio & Engineering Journal
+# Sujan Guragain · Portfolio & Journal
 
-A responsive, dependency-free portfolio with project pages, a searchable journal, a browser-based Markdown editor and a GitHub Pages publishing workflow.
+Personal website at **https://sujanguragain.com.np**. A static portfolio with projects, a searchable journal, an About page and a printable résumé. Posts are managed directly in GitHub.
 
-## What is included
+## Publish a journal entry
 
-- Home, Work, Journal, About, printable résumé, Privacy, Writing Studio and a 404 page.
-- Four project write-ups and three initial journal entries, drafted from the supplied portfolio and updated professional profile.
-- Updated professional portrait, hosted locally as an optimized WebP image.
-- Category filtering, title, summary and tag search, article contents navigation, local draft saving, Markdown import/export and existing-article editing.
-- Per-page metadata, canonical URLs, structured data, sitemap and RSS feed.
-- Responsive layouts, keyboard navigation, visible focus states and reduced-motion support.
+1. Open [`templates/new-post.md`](templates/new-post.md) and copy its contents.
+2. In [`content/posts`](content/posts), choose **Add file → Create new file**. Give it a descriptive filename ending in `.md`.
+3. Paste the template, update its metadata and write the article. Use a unique lowercase `slug` with words separated by hyphens. The slug becomes the article URL.
+4. Keep `draft: true` while preparing the post. Change it to `false` when it is ready to appear publicly.
+5. Commit to `main`. The **Build and publish portfolio** workflow validates and publishes the site. The journal, homepage, RSS feed and sitemap update automatically.
 
-## Important content notes
+To edit an article, open its Markdown file, choose the pencil icon, make the changes and commit. Keep the slug unchanged to preserve the URL. An optional `updated` date records a revision in the article metadata.
 
-The initial journal entries were prepared for this redesign and are dated 31 October 2026. They do not represent previously published posts. Set `draft: true` for any entry you want to withhold from the journal. Current professional content is based on the uploaded website and the October 2026 CV. The MSc is shown as in progress. AWS and Red Hat training are not presented as certifications. Client-specific addresses and configurations are excluded.
+Dates are publication labels, not scheduled publishing. A future date does not hide an article; use `draft: true` until it is ready. Draft files in this public repository remain readable on GitHub even though they are excluded from the website.
 
-## Run locally
+The website has no editing interface, account system or upload form. Only repository contributors can change and publish its content.
 
-Requires Node.js 20 or newer. There are no npm dependencies to install.
+## Article format
+
+The block between `---` lines is metadata. Use double quotes for strings, JSON arrays for tags and an unquoted `true` or `false` for `draft`.
+
+Required: `title`, `slug`, `date`, `category`, `excerpt`, `tags`, `draft`.
+
+Optional:
+
+- `art`: `monitoring`, `security`, `delivery`, `database`, `logging`, `ai` or `cloud`.
+- `order`: a number to order articles sharing the same date. Newer dates always appear first.
+- `updated`: a revision date in `YYYY-MM-DD` format.
+- `source`: a reference URL for editorial records. Include reader-facing attribution in the article body too.
+
+Supported Markdown: paragraphs, `##` to `####` headings, **bold**, *italic*, inline code, links, numbered and unordered lists, block quotes and fenced code blocks. Raw HTML is escaped. Nested lists, tables and embedded media are not supported by this small renderer.
+
+## Update the website
+
+| File | Content |
+| --- | --- |
+| `content/profile.json` | Introduction, contact links, employment, education, résumé certifications and skills |
+| `content/projects.json` | Project summaries, tools, contributions and operational notes |
+| `content/posts/*.md` | Journal articles |
+| `content/redirects.json` | Previous article URLs and their replacement pages |
+| `assets/portrait.webp` | Profile photograph |
+| `assets/mark.svg` and `assets/favicon.svg` | SG identity and browser icon |
+| `assets/styles.css` | Layout, colours and responsive styles |
+| `scripts/build.mjs` | Page templates and build logic |
+| `scripts/artwork.mjs` | Decorative illustrations |
+
+Each project needs a unique slug. Set `featured: true` to include it on the homepage. Certifications appear as plain text in the résumé only.
+
+The ten initial notes cover monitoring, security review, automation, MySQL, Tomcat, ELK, private AI and three topics from Etech Insights. Prepared on 31 October 2026, these are technical notes, not historical incident reports or quantified case studies. Articles include source links. The MSc remains listed as in progress.
+
+## Check locally
+
+Requires Node.js 20 or newer. No npm packages are required.
 
 ```bash
 node scripts/build.mjs
@@ -25,56 +59,16 @@ node scripts/check.mjs
 python3 -m http.server 8000 --directory dist
 ```
 
-Open http://localhost:8000. Directly opening files with `file://` is not supported because navigation uses root-relative paths and the editor loads an article index.
+Open http://localhost:8000. Navigation uses root-relative URLs, so serve `dist/` instead of opening HTML files directly. Each build replaces `dist/` to prevent removed pages or assets from being carried forward.
 
-## Live publishing
+## Publishing and recovery
 
-This repository builds and deploys the portfolio automatically after each push to `main`. The workflow builds `dist/`, validates pages and content, then publishes the generated artifact to the existing GitHub Pages site. No credentials or third-party hosting account are required.
+Every push to `main` builds and checks the site, then deploys `dist/` to GitHub Pages. The domain remains `sujanguragain.com.np`; no additional hosting account or credentials are required.
 
-The custom domain remains `sujanguragain.com.np`. Existing domain and HTTPS settings are preserved. When Pages still uses a source branch, the workflow waits for GitHub’s built-in publisher to finish before deploying the new artifact, preventing an older root page from overwriting the generated site. If you later choose **Settings → Pages → Source → GitHub Actions**, that compatibility wait is skipped.
+If GitHub’s built-in branch publisher also runs, the custom workflow waits for it to finish before deploying the generated site. If Pages is later switched to **Settings → Pages → Source → GitHub Actions**, the compatibility wait is skipped automatically.
 
-The original website is preserved in branch `backup/pre-redesign-2026-10-31`. To review it, open that branch on GitHub. Rollbacks should use a normal revert commit on `main` so history remains intact.
+The original website is preserved in `backup/pre-redesign-2026-10-31`. Restore an earlier version through a normal revert commit on `main` so publishing runs again and history is retained.
 
-Official publishing reference: https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages
+`site.config.json` holds the production origin. A `SITE_URL` environment variable overrides it for previews. The build emits canonical links, metadata, structured data, RSS, a sitemap, `robots.txt`, `.nojekyll` and `CNAME`.
 
-## Add a blog post without writing HTML
-
-1. Open `/studio/` on the running site.
-2. Enter a title, publication date, category, summary, tags and the article body.
-3. The preview updates as you write. Drafts save in this browser; export important work to keep a separate copy.
-4. Choose **Ready to publish** when finished, then **Export Markdown**.
-5. Upload the resulting `.md` file to `content/posts/` in GitHub and commit.
-6. After the workflow succeeds, the article appears in the journal, homepage, feed and sitemap.
-
-A Draft export contains `draft: true` and will not be published. Dates are labels, not a publication schedule: a future date alone does not hide a post. Keep `draft: true` until you want to publish.
-
-The Writing Studio is a local authoring utility, not an authenticated CMS. It cannot upload to GitHub, change the live site, or share drafts across devices. GitHub controls who can commit and publish. The studio contains no credentials and is excluded from the sitemap and search indexing.
-
-## Edit a post
-
-Choose it in the studio's **existing article** list and select **Load article**, or import a Markdown file. Export with the same slug and replace the same file in `content/posts/`. A slug is the article URL, so keep it stable after publication.
-
-## Markdown format
-
-Metadata is written between `---` lines. String values should be double-quoted. Lists use JSON array syntax. See `templates/new-post.md`.
-
-Supported body syntax: paragraphs, `##` / `###` / `####` headings, **bold**, *italic*, inline code, links, numbered and unordered lists, block quotes and triple-backtick code fences. Raw HTML is escaped. Nested lists, tables and embedded media are not supported by this small renderer.
-
-## Update projects and your profile
-
-- `content/profile.json`: name, contact links, introduction, roles, certifications, education and skills.
-- `content/projects.json`: project summaries, category, tags, contribution and outcome.
-- `content/posts/*.md`: articles.
-- `assets/portrait.webp`: profile photograph.
-- `assets/styles.css`: visual design and responsive layout.
-- `scripts/build.mjs`: templates and the static site generator.
-
-Use one existing project object as a starting point for a new project; use a unique lowercase slug. Choose `security`, `ai`, `monitoring` or `delivery` for its artwork. Set `featured` to true for homepage inclusion.
-
-## Hosting and canonical URLs
-
-`site.config.json` stores the default site origin. The GitHub Actions workflow overrides this with `SITE_URL=https://sujanguragain.com.np`, so canonical URLs, structured data, RSS and the sitemap use your actual domain after deployment. For another root-domain host, pass that origin with `SITE_URL` when building. This project targets a root domain/user GitHub Pages site, not a subdirectory project site.
-
-## Validation
-
-`node scripts/check.mjs` checks generated local links and anchors, one h1 per page, image alt attributes, duplicate IDs, metadata, draft exclusion, optimized portrait size and safe Markdown handling. Browser visual QA was unavailable in the creation environment. Structural checks and live deployment checks are recorded separately.
+Publishing documentation: https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages

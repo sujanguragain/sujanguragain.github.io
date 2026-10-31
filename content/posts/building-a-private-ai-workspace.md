@@ -1,38 +1,41 @@
 ---
-title: "Building a private AI workspace"
+title: "Operating a private Hermes AI workspace"
 slug: "building-a-private-ai-workspace"
 date: "2026-10-31"
 category: "AI infrastructure"
-excerpt: "A look at the infrastructure behind internal model serving and role-specific agent workflows."
-tags: ["AI", "Docker", "Hermes"]
+excerpt: "How model serving, a web interface and role-specific agent workflows fit into an internal AI environment."
+tags: ["Hermes", "OpenWebUI", "Model serving"]
 art: "ai"
+order: 7
 draft: false
 ---
-## More than a model endpoint
 
-My work with internal AI infrastructure brings together model serving, containerized services, a web interface and agent workflows. The aim is to make AI tools useful within the environments where teams already work.
+My internal AI infrastructure work brings together model serving, a browser interface and agent workflows. The useful questions are operational: who can access it, what a profile can do and how the service behaves when resources are busy.
 
-The work sits alongside my systems administration and DevOps responsibilities at Chez Inspheris / Lively Software. It has involved GPU-backed inference, OpenWebUI, Hermes agents and repository-based automation.
+## Keep the layers clear
 
-## The layers of the workspace
+The environment includes GPU-backed inference, containerized services, OpenWebUI and Hermes agents. Each component has a distinct role. The model server handles inference, the web interface provides access and the agent layer connects a model with a task and its permitted tools.
 
-The infrastructure can be understood through four layers:
+That separation helps when troubleshooting. A slow response can come from model capacity, a queued request, a network path or a tool operation. Treating the stack as a single process makes those differences harder to see.
 
-- **Model serving:** running inference services and working within the available GPU resources.
-- **Access:** providing a usable interface and configuring reverse-proxy access.
-- **Agent workflows:** separating role-specific profiles and their working context.
-- **Knowledge and delivery:** connecting Markdown output, documentation and Git-based publishing.
+## Give profiles a defined purpose
 
-Each layer introduces operational work of its own. A functioning model endpoint is only one part of the overall environment.
+The work has included role-specific Hermes profiles, repository access and Markdown-based output. A profile needs a clear working context and an intentional set of permissions.
 
-## Bringing DevOps habits to AI
+Keep repository access aligned with the task. Separate credentials from reusable prompts and documentation. Test a profile’s expected workflow after changing its configuration, including what happens when a dependency is unavailable.
 
-Working with private AI services draws on familiar infrastructure skills: understanding dependencies, checking service health, controlling access and documenting how components fit together.
+## Account for the infrastructure
 
-The project has also included profile creation and validation, GitHub-based workflows and cross-profile testing. These are useful connections between AI experimentation and established engineering practice.
+Model selection has a direct effect on resource use and response behaviour. Track the deployed model and its configuration alongside the services that use it. Capacity discussions need to include available GPU memory, expected concurrent use and the context required by the task.
 
-## What comes next
+Reverse-proxy access, logs and service health checks remain ordinary systems work. They need the same maintenance as other internal applications.
 
-I plan to use this journal to document further lessons from this area as the work develops. Public notes will focus on architectural ideas and operational observations, while keeping internal repositories, addresses and access details private.
+## Keep output reviewable
 
-For an overview of the work, see the [private AI workspace project](/work/private-ai-workspace/).
+Git and Markdown provide a useful record for documentation and publishing workflows. Changes can be reviewed, compared and corrected before they become shared guidance.
+
+This project continues my work in systems administration and deployment automation. The public notes focus on the architecture and operational considerations; internal repositories, credentials and infrastructure addresses are kept out of them.
+
+## Related project
+
+- [Hermes AI workspace](/work/private-ai-workspace/)
