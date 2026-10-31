@@ -1,0 +1,34 @@
+{
+  "name": "Sujan Guragain",
+  "role": "DevOps & Security Engineer",
+  "location": "Kathmandu, Nepal",
+  "email": "guragain.sujan11@gmail.com",
+  "linkedin": "https://www.linkedin.com/in/sujanguragain/",
+  "github": "https://github.com/sujanguragain",
+  "website": "https://sujanguragain.com.np",
+  "repository": "sujanguragain/sujanguragain.github.io",
+  "branch": "main",
+  "description": "DevOps, cloud infrastructure and cybersecurity. Selected work and practical engineering notes by Sujan Guragain, based in Kathmandu, Nepal.",
+  "intro": "I’m Sujan, a DevOps and security engineer based in Kathmandu. I help teams ship with confidence and keep critical infrastructure running.",
+  "about": "My work sits at the intersection of systems administration, delivery automation and network security. From keeping production Linux services healthy to modernizing firewalls and building private AI platforms, I care about systems that people can understand, operate and trust.",
+  "experience": [
+    {"role":"Systems Administrator & DevOps Engineer","company":"Chez Inspheris / Lively Software","period":"June 2022 — Present","description":"Production Linux services, Jenkins delivery pipelines, Proxmox infrastructure, monitoring, backup and recovery, and internal AI tooling."},
+    {"role":"Network & Security Engineer","company":"Etech International Pvt. Ltd.","period":"Current project engagement","description":"Check Point infrastructure modernization, high-availability validation, controlled upgrades and security operations for enterprise environments."},
+    {"role":"System Administrator","company":"Genese Solution Pvt. Ltd.","period":"July 2021 — June 2022","description":"AWS infrastructure, release automation, monitoring, hosting operations and technical support for customer workloads."},
+    {"role":"IT Support Engineer","company":"Etech International Pvt. Ltd.","period":"January 2018 — June 2021","description":"IT support and systems troubleshooting; the foundation of my path into infrastructure engineering."}
+  ],
+  "certifications":[
+    {"short":"CCSE","name":"Check Point Certified Security Expert","year":"2026"},
+    {"short":"CCSA","name":"Check Point Certified Security Administrator · R81","year":"2025"}
+  ],
+  "education":[
+    {"title":"MSc · Information Technology & Cybersecurity","school":"Islington College / London Metropolitan University","status":"In progress"},
+    {"title":"BSc · Computer Science & Information Technology","school":"Tribhuvan University","status":"Completed"}
+  ],
+  "skills":[
+    {"title":"Cloud & systems","items":["AWS","Linux","Proxmox VE / PBS","Nginx","Apache HTTPD","MySQL"]},
+    {"title":"Delivery & automation","items":["Jenkins","Docker / Compose","Git / GitHub","Bash","CI/CD"]},
+    {"title":"Security & resilience","items":["Check Point","ClusterXL","pfSense","SSL / TLS","Backup & recovery"]},
+    {"title":"Visibility & AI","items":["Prometheus","Grafana","Nagios","Elasticsearch","OpenWebUI","Hermes"]}
+  ]
+}
